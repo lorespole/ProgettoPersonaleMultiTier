@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgettoPersonaleMultiTier.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace ProgettoPersonaleMultiTier.Models
         public string ProductName { get; set; }
         public int? SupplierId { get; set; }
         public int CategoryId { get; set; }
+        public Categories CategoryName { get; set; }
+
         public string QuantityPerUnit { get; set; }
         public decimal? UnitPrice { get; set; }
         public short? UnitsInStock { get; set; }
