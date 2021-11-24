@@ -1,0 +1,47 @@
+﻿@model ProdottoViewModel
+<form>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+            <input type="hidden" asp-for="ProductId" method="post"/>
+            </div>
+            <div class="col">
+                <label asp-for="ProductName"></label>
+                <input asp-for="ProductName" />
+            </div>
+            <div class="col">
+                <label asp-for="SupplierId"></label>
+                <input asp-for="SupplierId" type="hidden" />
+            </div>
+            <div class="col">
+                <label asp-for="CategoryId"></label>
+                <input asp-for="CategoryId" type="hidden" />
+            </div>
+            <div class="col">
+                <label asp-for="QuantityPerUnit"></label>
+                <input asp-for="QuantityPerUnit" />
+            </div>
+            <div class="col">
+                <label asp-for="UnitPrice"></label>
+                <input asp-for="UnitPrice" />
+            </div>
+            <div class="col">
+                <label asp-for="UnitsInStock"></label>
+                <input asp-for="UnitsInStock" />
+            </div>
+            <div class="col">
+                <label asp-for="UnitsOnOrder"></label>
+                <input asp-for="UnitsOnOrder" />
+            </div>
+            <div class="col">
+                <label asp-for="ReorderLevel"></label>
+                <input asp-for="ReorderLevel" />
+            </div>
+            <div class="col">
+                <label asp-for="Discontinued"></label>
+                <input asp-for="Discontinued" type="hidden" />
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-warning" href="~/Prodotto/Index">Torna alla lista aggiornata</a>
+</form>

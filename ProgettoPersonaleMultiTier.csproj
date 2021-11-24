@@ -14,7 +14,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IlProgettoPersonaleMultiTier.domain\ProgettoPersonaleMultiTier.domain.csproj" />
+    <ProjectReference Include="..\ProgettoPersonaleMultiTier.repository\ProgettoPersonaleMultiTier.repository.csproj" />
     <ProjectReference Include="..\ProgettoPersonaleMultiTier.servizi.common\ProgettoPersonaleMultiTier.servizi.common.csproj" />
+    <ProjectReference Include="..\ProgettoPersonaleMultiTier.servizi\ProgettoPersonaleMultiTier.servizi.csproj" />
   </ItemGroup>
 
 </Project>

@@ -29,10 +29,10 @@
                 <td>@prodotti.UnitsOnOrder</td>
                 <td>@prodotti.ReorderLevel</td>
                 <td>@prodotti.Discontinued</td>
-                <td><a class="btn btn-info" asp-controller="Product" asp-action="Update" asp-route-productId="@prodotti.ProductId">Update a product</a></td>
-                <td><a class="btn btn-info" asp-controller="Product" asp-action="Delete" asp-route-productId="@prodotti.ProductId">Delete a product</a></td>
+                <td><a class="btn btn-info" asp-controller="Prodotto" asp-action="Update" asp-route-productId="@prodotti.ProductId">Update a product</a></td>
+                <td><a class="btn btn-info" asp-controller="Prodotto" asp-action="Delete" asp-route-productId="@prodotti.ProductId">Delete a product</a></td>
             </tr>
         }
-    <a class="btn btn-primary" href="~/Product/Save">Insert and save a product</a>
     </tbody>
 </table>
+<a class="btn btn-primary" href="~/Prodotto/Save">Insert and save a product</a>

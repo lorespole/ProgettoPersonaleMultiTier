@@ -39,9 +39,56 @@ namespace ProgettoPersonaleMultiTier.Controllers
             
             return View();
         }
-        public IActionResult Add()
+        public IActionResult Save(Prodotto prodotto)
         {
+            try
+            {
+                if (prodotto == null)
+                {
+                    return View("Error", "Shared");
+                }
 
+                _prodottoServizio.Add(prodotto);
+                _prodottoServizio.Save(prodotto);
+            }
+            catch (Exception eccezione)
+            {
+                RedirectToAction("Error", eccezione.Message, "Home");
+            }
+            
+            return View();
+        }
+        public IActionResult Update(int prodottoId)
+        {
+            Prodotto prodotto = new Prodotto();
+            var prodottoAggiornato = _prodottoServizio.SearchById(prodottoId);
+            prodottoAggiornato.ProductId = prodotto.ProductId;
+            prodottoAggiornato.ProductName = prodotto.ProductName;
+            prodottoAggiornato.SupplierId = prodotto.SupplierId;
+            prodottoAggiornato.CategoryId = prodotto.CategoryId;
+            prodottoAggiornato.QuantityPerUnit = prodotto.QuantityPerUnit;
+            prodottoAggiornato.UnitPrice = prodotto.UnitPrice;
+            prodottoAggiornato.UnitsInStock = prodotto.UnitsInStock;
+            prodottoAggiornato.UnitsOnOrder = prodotto.UnitsOnOrder;
+            prodottoAggiornato.ReorderLevel = prodotto.ReorderLevel;
+            prodottoAggiornato.Discontinued = prodotto.Discontinued;
+            _prodottoServizio.Save(prodottoAggiornato);
+            return View();
+        }
+        public IActionResult Delete(Prodotto prodotto)
+        {
+            try
+            {
+                if(prodotto != null)
+                {
+                    _prodottoServizio.Delete(prodotto);
+                    RedirectToAction("Index", "Prodotto");
+                }
+            }
+            catch (Exception e)
+            {
+               RedirectToAction("Error", e.Message.ToString(), "Home");
+            }
             return View();
         }
     }
